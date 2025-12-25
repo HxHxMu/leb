@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis E. Bonilla — Product Designer / UX-UI Lead + Music Producer</title>
+    <meta name="description" content="Canonical identity page for Luis E. Bonilla. Product design work, music credits, HxHxM catalog nodes, and verified public profiles (MusicBrainz, Discogs, Wikidata, LinkedIn).">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+            --border: #e5e5e5;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: #fff;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .hero {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .bullets {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .bullets li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .bullets li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-light);
+        }
+
+        .micro-line {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .chips {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .chip {
+            padding: 0.5rem 1rem;
+            background: var(--bg-light);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            padding: 2rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .card li {
+            padding: 0.4rem 0;
+            color: var(--text-secondary);
+        }
+
+        .card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .music-nodes {
+            margin: 2rem 0;
+        }
+
+        .music-nodes ul {
+            list-style: none;
+        }
+
+        .music-nodes li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .music-nodes a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .identity-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .identity-list {
+            list-style: none;
+        }
+
+        .identity-list li {
+            padding: 0.5rem 0;
+        }
+
+        .identity-list strong {
+            display: inline-block;
+            min-width: 140px;
+        }
+
+        .profile-links a {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .profile-links a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        footer {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">Luis E. Bonilla</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#music">Music</a>
+                <a href="#identity">Identity</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section hero">
+        <h1>Luis E. Bonilla</h1>
+        <div class="subtitle">Product Designer / UX-UI Lead · Music Producer · Founder, HxHxM (Haux Haux Music)</div>
+        
+        <ul class="bullets">
+            <li>Product design + UX systems for consumer apps and platforms</li>
+            <li>Music production + catalog strategy across multiple artist personas</li>
+            <li>Canonical identity page for links, references, and verification</li>
+        </ul>
+
+        <div class="button-group">
+            <a href="https://equinox-griffin-2fa.notion.site/Home-1a61fa1524b1806f83cefc504380ff40" target="_blank" class="btn">Design portfolio</a>
+            <a href="https://open.spotify.com/user/31zds73gnntza4b4tqur5mslb3n4/playlists" target="_blank" class="btn btn-secondary">Music universe</a>
+            <a href="https://www.linkedin.com/in/lxexb" target="_blank" class="btn btn-secondary">Contact</a>
+        </div>
+
+        <div class="micro-line">
+            Also credited as: Luis Bonilla (legacy). Use 'Luis E. Bonilla' as canonical name.
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About</h2>
+        <div class="bio">
+            Luis E. Bonilla is a Product Designer / UX-UI Lead with a background in end-to-end product work—discovery, IA, prototyping, design systems, and delivery—across consumer-facing experiences. In parallel, he produces and releases music under HxHxM (Haux Haux Music), a catalog that includes legacy bands and fictional artist personas designed for cohesive metadata, credits, and discoverability. This page is the canonical reference node connecting professional work, music credits, and public profiles.
+        </div>
+
+        <div class="chips">
+            <span class="chip">Based in: United States</span>
+            <span class="chip">Primary name: Luis E. Bonilla</span>
+            <span class="chip">Roles: Product Design, UX/UI, Producer</span>
+            <span class="chip">Label / Catalog: HxHxM</span>
+            <span class="chip">Also known as: Luis Bonilla (legacy credit)</span>
+        </div>
+    </section>
+
+    <section class="section" id="work">
+        <h2>Selected Design Work</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Disney</h3>
+                <p>Parks / guest experiences</p>
+                <ul>
+                    <li>UX strategy, IA, prototyping, design systems collaboration</li>
+                    <li>Shipped improvements to navigation, onboarding, and usability</li>
+                </ul>
+                <a href="https://equinox-griffin-2fa.notion.site/Play-Disney-Parks-App-Redesign-1d11fa1524b1803096f0c97e733bf2b7" target="_blank">Case study →</a>
+            </div>
+
+            <div class="card">
+                <h3>Life Force Academy</h3>
+                <p>Membership portal + public site</p>
+                <ul>
+                    <li>Portal IA + onboarding improvements, Flowbite-based system alignment</li>
+                    <li>Improved clarity, navigation, and membership experience</li>
+                </ul>
+                <a href="https://equinox-griffin-2fa.notion.site/Life-Force-Academy-Case-Study-1b81fa1524b1807db505f5ede3d1669a" target="_blank">Case study →</a>
+            </div>
+
+            <div class="card">
+                <h3>Independent design practice</h3>
+                <p>Branding, web, UX documentation</p>
+                <ul>
+                    <li>Branding, web, UX documentation, rapid prototyping</li>
+                    <li>Systems thinking for small businesses and products</li>
+                </ul>
+                <a href="https://equinox-griffin-2fa.notion.site/Home-1a61fa1524b1806f83cefc504380ff40" target="_blank">Selected work →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="music">
+        <h2>Music / HxHxM Catalog</h2>
+        <div class="bio">
+            HxHxM (Haux Haux Music) is a catalog architecture spanning legacy bands, collaborative projects, and fictional personas. Releases are structured for consistent artist credits, link relationships, and metadata integrity across platforms.
+        </div>
+
+        <div class="music-nodes">
+            <h3>Key Nodes</h3>
+            <ul>
+                <li><a href="https://solo.to/hxhxm" target="_blank">HxHxM (Label / Catalog hub)</a></li>
+                <li><a href="https://www.youtube.com/@AlianzaDivinaCollective" target="_blank">Alianza Divina Collective</a></li>
+                <li><a href="https://www.youtube.com/@TheVon" target="_blank">The Von</a></li>
+                <li><a href="https://www.youtube.com/@diestraHQ" target="_blank">Diestra</a></li>
+                <li><a href="https://www.youtube.com/@bufeo_music" target="_blank">Bufeo</a></li>
+                <li><a href="https://www.youtube.com/@PitoPantera" target="_blank">Pito Pantera</a></li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <h3>Roles</h3>
+            <ul class="bullets">
+                <li>Producer / arranger / engineer (project-dependent)</li>
+                <li>Composer / songwriter credits where applicable</li>
+                <li>Catalog strategy + release metadata management</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="identity">
+        <h2>Identity & Verification</h2>
+        <div class="two-col">
+            <div class="identity-section">
+                <h3>Canonical identifiers</h3>
+                <ul class="identity-list">
+                    <li><strong>Primary name:</strong> Luis E. Bonilla</li>
+                    <li><strong>Also known as:</strong> Luis Bonilla (legacy)</li>
+                    <li><strong>Occupations:</strong> Product Designer; Music Producer</li>
+                    <li><strong>Entity type:</strong> Person</li>
+                </ul>
+            </div>
+
+            <div class="identity-section">
+                <h3>Authoritative profile links</h3>
+                <div class="profile-links">
+                    <a href="https://www.linkedin.com/in/lxexb" target="_blank">LinkedIn</a>
+                    <a href="https://equinox-griffin-2fa.notion.site/Home-1a61fa1524b1806f83cefc504380ff40" target="_blank">Portfolio / Notion</a>
+                    <a href="https://musicbrainz.org/artist/77ed9086-2855-4a68-9985-865169e55f62" target="_blank">MusicBrainz</a>
+                    <a href="https://www.discogs.com/artist/17022757-Luis-E-Bonilla" target="_blank">Discogs</a>
+                    <a href="https://www.wikidata.org/wiki/Q137176863" target="_blank">Wikidata</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <div style="margin-bottom: 2rem;">
+            <strong>Email:</strong> <a href="mailto:artistmgmt@hxhxm.com" style="color: var(--primary); text-decoration: none;">artistmgmt@hxhxm.com</a>
+        </div>
+        <div class="contact-form">
+            <form action="mailto:artistmgmt@hxhxm.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send message</button>
+            </form>
+        </div>
+        <div style="margin-top: 2rem; color: var(--text-secondary);">
+            Location: United States
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div>© Luis E. Bonilla</div>
+            <div style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                Canonical identity page for attribution and references.
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/lxexb" target="_blank">LinkedIn</a>
+                <a href="https://musicbrainz.org/artist/77ed9086-2855-4a68-9985-865169e55f62" target="_blank">MusicBrainz</a>
+                <a href="https://www.wikidata.org/wiki/Q137176863" target="_blank">Wikidata</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luis E. Bonilla",
+      "alternateName": ["Luis Bonilla"],
+      "url": "https://leb.hxhxm.com/",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Luis_E._Bonilla_seated_with_acoustic_guitar_%28black_and_white_promotional_photograph%29.jpg",
+      "jobTitle": ["Product Designer", "UX/UI Lead", "Music Producer"],
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Independent"
+        }
+      ],
+      "affiliation": [
+        {
+          "@type": "Organization",
+          "name": "HxHxM (Haux Haux Music)",
+          "url": "https://solo.to/hxhxm"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/lxexb",
+        "https://equinox-griffin-2fa.notion.site/Home-1a61fa1524b1806f83cefc504380ff40",
+        "https://musicbrainz.org/artist/77ed9086-2855-4a68-9985-865169e55f62",
+        "https://www.discogs.com/artist/17022757-Luis-E-Bonilla",
+        "https://www.wikidata.org/wiki/Q137176863"
+      ],
+      "knowsAbout": [
+        "Product design",
+        "User experience design",
+        "Design systems",
+        "Information architecture",
+        "Music production",
+        "Metadata strategy"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "HxHxM (Haux Haux Music)",
+      "url": "https://YOUR-HXHXM-DOMAIN.COM/",
+      "sameAs": [
+        "https://musicbrainz.org/label/YOUR-LABEL-ID"
+      ]
+    }
+    </script>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
